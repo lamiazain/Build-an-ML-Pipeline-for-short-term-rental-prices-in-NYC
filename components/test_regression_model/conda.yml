@@ -11,5 +11,4 @@ dependencies:
   - pip:
       - mlflow==2.14.1
       - wandb==0.21.3
-      #Working locally with older stable dependencies
-      - git+https://github.com/udacity/nd0821-c2-build-model-workflow-starter.git#egg=wandb-utils&subdirectory=components
+      - git+https://github.com/lamiazain/Build-an-ML-Pipeline-for-short-term-rental-prices-in-NYC.git#egg=wandb-utils&subdirectory=components
