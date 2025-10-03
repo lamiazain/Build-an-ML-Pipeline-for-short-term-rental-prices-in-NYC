@@ -25,7 +25,7 @@ def test_column_names(data):
     ]
 
     these_columns = data.columns.to_numpy()  # Using to_numpy() for better performance
-
+    print(f"fetched columns:{these_columns}")
     # This also enforces the same order
     assert np.array_equal(expected_colums, these_columns)  # Using numpy comparison for better performance
 
