@@ -31,6 +31,7 @@ def go(config: DictConfig):
     # Steps to execute
     steps_par = config['main']['steps']
     active_steps = steps_par.split(",") if steps_par != "all" else _steps
+    root_path = hydra.utils.get_original_cwd()
 
     # Move to a temporary directory
     with tempfile.TemporaryDirectory() as tmp_dir:
@@ -54,7 +55,20 @@ def go(config: DictConfig):
             ##################
             # Implement here #
             ##################
-            pass
+            _ = mlflow.run(
+                f"{config['main']['src_repository']}/basic_cleaning",
+                "main",
+                version='main',
+                env_manager="conda",
+                parameters={
+                    "input_artifact": "sample.csv:latest",
+                    "output_artifact": "cleand_csv.csv",
+                    "output_type": "raw_data",
+                    "output_description": "Cleaned data",
+                    "min_price":config["etl"]["min_price"],
+                    "max_price":config["etl"]["max_price"]
+                },
+            )
 
         if "data_check" in active_steps:
             ##################
