@@ -10,4 +10,3 @@ dependencies:
   - pip:
       - mlflow==2.14.1
       - wandb==0.21.3
-      - git+https://github.com/lamiazain/Build-an-ML-Pipeline-for-short-term-rental-prices-in-NYC.git#egg=wandb-utils&subdirectory=components
