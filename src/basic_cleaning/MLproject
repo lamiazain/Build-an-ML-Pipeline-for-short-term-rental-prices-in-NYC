@@ -34,4 +34,4 @@ entry_points:
                        --output_type {output_type} \
                        --output_description {output_description} \
                        --min_price {min_price} \
-                       --max_price {max_price} \
+                       --max_price {max_price} 
