@@ -31,7 +31,7 @@ def go(config: DictConfig):
     # Steps to execute
     steps_par = config['main']['steps']
     active_steps = steps_par.split(",") if steps_par != "all" else _steps
-    root_path = hydra.utils.get_original_cwd()
+    #root_path = hydra.utils.get_original_cwd()
 
     # Move to a temporary directory
     with tempfile.TemporaryDirectory() as tmp_dir:
@@ -74,7 +74,19 @@ def go(config: DictConfig):
             ##################
             # Implement here #
             ##################
-            pass
+            _ = mlflow.run(
+                f"{config['main']['src_repository']}/data_check",
+                "main",
+                version='main',
+                env_manager="conda",
+                parameters={
+                    "csv": "cleand_csv.csv:latest",
+                    "ref": "cleand_csv.csv:reference",
+                    "kl_threshold": config["data_check"]["kl_threshold"],
+                    "min_price":config["etl"]["min_price"],
+                    "max_price":config["etl"]["max_price"]
+                },
+            )
 
         if "data_split" in active_steps:
             ##################
