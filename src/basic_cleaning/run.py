@@ -39,7 +39,7 @@ def go(args):
 
     logger.info("Creating artifact")
 
-    df.to_csv("clean_data.csv, index=False")
+    df.to_csv("clean_data.csv", index=False)
     artifact = wandb.Artifact(
         name=args.output_artifact,
         type=args.output_type,
