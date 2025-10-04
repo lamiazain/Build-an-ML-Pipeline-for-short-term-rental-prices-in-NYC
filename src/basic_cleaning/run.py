@@ -31,9 +31,17 @@ def go(args):
 
 
 
-    logger.info("Limiting longitude and latitude")
-    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+    logger.info("Applying price filter")
+    price_idx = df['price'].between(args.min_price, args.max_price)
+
+    logger.info("Applying geo boundaries filter")
+    geo_idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+
+    # Combine filters with AND
+    idx = price_idx & geo_idx
+
     df = df[idx].copy()
+
 
     # Convert last_review to datetime
     logger.info("Converting last_review to datetime")
@@ -41,7 +49,6 @@ def go(args):
 
     logger.info("Creating artifact")
 
-    
 
     df.to_csv("clean_data.csv", index=False)
     artifact = wandb.Artifact(
