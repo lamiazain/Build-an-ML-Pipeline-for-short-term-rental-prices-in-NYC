@@ -6,6 +6,9 @@ to be retrained with the same cadence, necessitating an end-to-end pipeline that
 
 In this project you will build such a pipeline.
 
+### [My Project link on wandb](https://wandb.ai/lamiahasan4-udacity/nyc_airbnb/overview)
+### [My Project link on GitHub](https://github.com/lamiazain/Build-an-ML-Pipeline-for-short-term-rental-prices-in-NYC)
+
 ## Table of contents
 
 - [Introduction](#build-an-ML-Pipeline-for-Short-Term-Rental-Prices-in-NYC)
@@ -589,8 +592,7 @@ If you see the any error while running the command:
 Please, make sure all steps are using **the same** python version and that you have **conda installed**. Additionally, *mlflow* and *wandb* packages are crucial and should have the same version.
 
 
-### [Project link on wandb](https://wandb.ai/lamiahasan4-udacity/nyc_airbnb/overview)
-### [My Project link on GitHub](https://github.com/lamiazain/Build-an-ML-Pipeline-for-short-term-rental-prices-in-NYC)
+
 
 ## License
 
