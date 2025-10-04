@@ -6,8 +6,8 @@ to be retrained with the same cadence, necessitating an end-to-end pipeline that
 
 In this project you will build such a pipeline.
 
-### [My Project link on wandb](https://wandb.ai/lamiahasan4-udacity/nyc_airbnb/overview)
-### [My Project link on GitHub](https://github.com/lamiazain/Build-an-ML-Pipeline-for-short-term-rental-prices-in-NYC)
+### [My Project link on wandb](https://wandb.ai/lamiahasan4-udacity/nyc_airbnb/overview)|private (shared with Udacity team)
+### [My Project link on GitHub](https://github.com/lamiazain/Build-an-ML-Pipeline-for-short-term-rental-prices-in-NYC)|public
 
 ## Table of contents
 
